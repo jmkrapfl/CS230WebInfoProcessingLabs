@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	   <!-- title: CS230 lab 1 food pyramid
+           Author: Jessica Krapfl
+		   Date: 02/08/2021
+	   -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Jessica's food pyramid</title>
+        <link href="FoodPyramidLab1.css" rel="stylesheet" type="text/css" />
+        
+        <script type="text/javascript">
+            function add(id)
+            {
+                const numberElement = document.getElementById(id);
+                const number = parseInt(numberElement.innerText) + 1;
+                numberElement.innerText = number;
+            }
+          
+            function subtract(id)
+            {
+                const numberElement = document.getElementById(id);
+                const number = parseInt(numberElement.innerText) - 1;
+                numberElement.innerText = number;
+            }
+         
+            function hide(id1,id2)
+            {
+                document.getElementById(id1).style.visibility='hidden';
+                document.getElementById(id2).style.visibility='hidden';
+            }
+            function show(id1,id2)
+            {
+                document.getElementById(id1).style.visibility='visible';
+                document.getElementById(id2).style.visibility='visible';
+            }
+            function hideAllOnStart()
+            {
+                document.getElementById('addRow1').style.visibility='hidden';
+                document.getElementById('subRow1').style.visibility='hidden';
+                document.getElementById('addRow2').style.visibility='hidden';
+                document.getElementById('subRow2').style.visibility='hidden';
+                document.getElementById('addRow3').style.visibility='hidden';
+                document.getElementById('subRow3').style.visibility='hidden';
+                document.getElementById('addRow4').style.visibility='hidden';
+                document.getElementById('subRow4').style.visibility='hidden';
+                document.getElementById('addRow5').style.visibility='hidden';
+                document.getElementById('subRow5').style.visibility='hidden';
+                document.getElementById('addRow6').style.visibility='hidden';
+                document.getElementById('subRow6').style.visibility='hidden';
+            }
+      </script>
+    </head>
+    <body onload="hideAllOnStart()">
+        <div id = container>
+            <div id= triangle  onmouseover="show('addRow1','subRow1')" onmouseout="hide('addRow1','subRow1')">
+                <button type="button" id="addRow1" onclick="add('row1')">+</button>
+                <p id="row1">0</p>
+                <button type= "button" id="subRow1" onclick="subtract('row1')">-</button>
+            </div>
+    
+            <div id=trap1 onmouseover="show('addRow2','subRow2')" onmouseout="hide('addRow2','subRow2')">
+                <button type="button" id="addRow2" onclick="add('row2')">+</button>
+                <p id="row2">0</p>
+                <button type= "button" id="subRow2" onclick="subtract('row2')">-</button>
+            </div>
+            
+            <div id=trap2 onmouseover="show('addRow3','subRow3')" onmouseout="hide('addRow3','subRow3')">
+                <button type="button" id="addRow3" onclick="add('row3')">+</button>
+                <p id="row3">0</p>
+                <button type= "button" id="subRow3" onclick="subtract('row3')">-</button>
+            </div>
+            <div id=trap3 onmouseover="show('addRow4','subRow4')" onmouseout="hide('addRow4','subRow4')">
+                <button type="button" id="addRow4" onclick="add('row4')">+</button>
+                <p id="row4">0</p>
+                <button type= "button" id="subRow4" onclick="subtract('row4')">-</button>
+            </div>
+            <div id=trap4 onmouseover="show('addRow5','subRow5')" onmouseout="hide('addRow5','subRow5')">
+                <button type="button" id="addRow5" onclick="add('row5')">+</button>
+                <p id="row5">0</p>
+                <button type= "button" id="subRow5" onclick="subtract('row5')">-</button>
+            </div>
+            <div id=trap5 onmouseover="show('addRow6','subRow6')" onmouseout="hide('addRow6','subRow6')">
+                <button type="button" id="addRow6" onclick="add('row6')">+</button>
+                <p id="row6">0</p>
+                <button type= "button" id="subRow6" onclick="subtract('row6')">-</button>
+            </div>
+        </div>
+        <div id=info>
+            <h1>Interactive Food Pyramid</h1>
+            <h3>Move over the shapes to interact with the pyramid.</h3>
+            <h2>Today's Date</h2>
+            <label>Date:</label>
+            <input type='date'>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,243 @@
+/*
+   CS230 Lab1
+   Author: Jessica Krapfl
+   Date:   08/02/21
+*/
+
+body
+{
+    display: center;
+}
+
+p
+{
+    color: black;
+}
+/*section containers*/
+#container
+{
+    float: right;
+}
+#info
+{
+    width: 500px;
+    margin-top: 0px;
+    margin-bottom: 0px; 
+}
+
+/*all the triangle stuff*/
+#triangle
+{
+    width: 0;
+    height 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid;
+    color: red;
+    position: fixed;
+    right: 625px;
+    bottom: 580px;
+    
+}
+#triangle:hover
+{
+    color: rgb(255,102,102);
+}
+#row1
+{
+    position: fixed;
+    right: 720px;
+    bottom: 600px;
+}
+#addRow1
+{
+    position: fixed;
+    right: 735px;
+    bottom: 615px;
+}
+#subRow1
+{
+    position: fixed;
+    right: 690px;
+    bottom: 615px;
+}
+
+/*all of trap1 stuff*/
+#trap1
+{
+    width: 198px;
+    height 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+    color: orange;
+    position: fixed;
+    right: 576px;
+    bottom: 472px;
+}
+#trap1:hover
+{
+    color: rgb(255,179,102);
+}
+#row2
+{
+    position: fixed;
+    right: 720px;
+    bottom: 498px;
+}
+#addRow2
+{
+    position: fixed;
+    right: 735px;
+    bottom: 512px;
+}
+#subRow2
+{
+    position: fixed;
+    right: 690px;
+    bottom: 512px;
+}
+
+/* trap 2 stuff*/
+#trap2
+{
+    width: 297px;
+    height 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+    color: yellow;
+    position: fixed;
+    right: 527px;
+    bottom: 364px;
+}
+#trap2:hover
+{
+    color: rgb(248,246,157);
+}
+#row3
+{
+    position: fixed;
+    right: 720px;
+    bottom: 386px;
+}
+#addRow3
+{
+    position: fixed;
+    right: 735px;
+    bottom: 400px;
+}
+#subRow3
+{
+    position: fixed;
+    right: 690px;
+    bottom: 400px;
+}
+
+/*trap 3 stuff*/
+#trap3
+{
+    width: 396px;
+    height 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+    color: rgb(98,247,98);
+    position: fixed;
+    right: 478px;
+    bottom: 266px;
+}
+#trap3:hover
+{
+    color: greenyellow;
+}
+#row4
+{
+    position: fixed;
+    right: 720px;
+    bottom: 286px;
+}
+#addRow4
+{
+    position: fixed;
+    right: 735px;
+    bottom: 301px;
+}
+#subRow4
+{
+    position: fixed;
+    right: 690px;
+    bottom: 301px;
+}
+
+/*trap 4 stuff*/
+#trap4
+{
+    width: 495px;
+    height 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+    color: skyblue;
+    position: fixed;
+    right: 429px;/*og429*/
+    bottom: 168px;
+}
+#trap4:hover
+{
+    color: rgb(156,209,232);
+}
+#row5
+{
+    position: fixed;
+    right: 720px;
+    bottom: 182px;
+}
+#addRow5
+{
+    position: fixed;
+    right: 735px;
+    bottom: 197px;
+}
+#subRow5
+{
+    position: fixed;
+    right: 690px;
+    bottom: 197px;
+}
+
+/*trap 5 stuff*/
+#trap5
+{
+    width: 594px;
+    height 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+    color: plum;
+    position: fixed;
+    right: 380px;/*og:380*/
+    bottom: 70px;
+}
+#trap5:hover
+{
+    color: rgb(204,177,221);
+}
+#row6
+{
+    position: fixed;
+    right: 720px;/*og720*/
+    bottom: 90px;
+}
+#addRow6
+{
+    position: fixed;
+    right: 735px;/*og735*/
+    bottom: 105px;
+}
+#subRow6
+{
+    position: fixed;
+    right: 690px;/*og690*/
+    bottom: 105px;
+}

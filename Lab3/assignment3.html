@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+        <!-- title: CS230 lab 2 
+           Author: Jessica Krapfl
+		   Date: 07/03/2021
+        -->
+<html>
+    <head>
+        <title>Jessica's Table</title>
+        <link href="assignment3.css" rel="stylesheet" type="text/css"/>
+        <script src="assignment3.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body onload="calc()">
+        <table id = table>
+            <tr id = head>
+                <th>Student Name</th>
+                <th>Student Number</th>
+                <th>Assignment 1</th>
+                <th>Assignment 2</th>
+                <th>Assignment 3</th>
+                <th>Assignment 4</th>
+                <th>Assignment 5</th>
+                
+                <th id=gradeHeading onclick="gradeClicked()">Grade</th>
+            </tr>
+            <tr class=body>
+                <td class=name>Jessica Krapfl</td>
+                <td class=name>20250742</td>
+                <td contenteditable=true class=assignment oninput="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment oninput="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment oninput="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment oninput="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment oninput="calc()" onclick="this.textContent=''">-</td>
+                
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Joe Hampton</td>
+                <td class=name>29258746</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Phil West</td>
+                <td class=name>25253712</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Tom Daly</td>
+                <td class=name>75395206</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Robert Patterson</td>
+                <td class=name>97425864</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Big Bird</td>
+                <td class=name>07418753</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Bill Dollar</td>
+                <td class=name>08527548</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Jill Middleton</td>
+                <td class=name>79743225</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Tess Ford</td>
+                <td class=name>08525753</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+            <tr class=body>
+                <td class=name>Abbey Feldman</td>
+                <td class=name>35367532</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td contenteditable=true class=assignment onkeyup="calc()" onclick="this.textContent=''">-</td>
+                <td class=grade>0</td>
+            </tr>
+        </table>
+        <span id=notSubmitted>Assignments not yet turned in: </span>
+        <div id=buttons>
+            <button onclick="addRow()">Add Row</button>
+            <button onclick="addColumn()">Add Column</button>
+        </div>
+    </body>
+</html>

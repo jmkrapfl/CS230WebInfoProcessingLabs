@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+	   <!-- title: CS230 lab 2 
+           Author: Jessica Krapfl
+		   Date: 02/08/2021
+           resourses I found helpful:
+            https://mavo.io/demos/svgpath/  -this site helped me figure out how to make the path for the bounce animation
+            
+            https://jenkov.com/tutorials/svg/svg    -animation.html#repeating-animations this site helped me figure out the general layout of the all the animate tags
+
+            https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths  -this also helped me figure out the other paths i have and what certain things mean
+	   -->
+    <link href="CS230Ghost.css" rel="stylesheet" type="text/css" />
+        <script src="CS230Ghost.js"></script>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Jessica's ghost</title>
+    </head>
+    <body onload=hideAllOnStart()>
+    <div id="container">
+        <svg class= ghostie id=ghost width=500 height=500 viewBox="0 0 500 500">
+            <rect id=background width=500 height=500 style="fill:rgb(140,205,247); stroke-width:1; stroke:rgb(140,205,247)"/><!--this is the background color for the view box -->
+            <g id=body>
+                <!--this is where the ghosts body is i decided to make my own ghost shape using a circle and a rectagle for the body and ellipses for the eyes -->
+                <rect id=Body x=175 y=250 width=150 height=150 style="fill:white">
+                    <!--inside each of the shapes i have my animate functions that tell them what to do -->
+                    <animateMotion id="STSRect" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                    <animate id="colorChangeRect" attributename="fill" values="white;red;orange;yellow;green;blue;purple;white" attribute="XML" begin="colorChange()" dur="10s"/><!--color change -->
+                    <animateTransform id="wiggleRect" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bounceRect" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </rect>
+                <circle id=dome cx=250 cy=250 r=75 style="fill:white">
+                    <animateMotion id="STSDome" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                    <animate id="colorChangeDome" attributename="fill" values="white;red;orange;yellow;green;blue;purple;white" attribute="XML" begin="colorChange()" dur="10s"/><!--color change -->
+                    <animateTransform id="wiggleDome" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bounceDome" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <ellipse id=leftEye cx=225 cy=250 rx=15 ry=20 style="fill:black">
+                    <animateMotion id="STSLEye" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                    <animateTransform id="wiggleLEye" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animate id="blinkL" attributename="ry" to="0" attribute="XML" begin="blink()" dur="1s"/>
+                    <animateMotion id="bounceLEye" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </ellipse>
+                <ellipse id=leftEyeP cx=225 cy=250 rx=5 ry=5 style="fill:white">
+                    <animateMotion id="STSLEyeP" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                    <animateTransform id="wiggleLEyeP" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bounceLEyeP" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </ellipse>
+                <ellipse id=rightEye cx=275 cy=250 rx=15 ry=20 style="fill:black">
+                    <animateMotion id="STSREye" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                    <animateTransform id="wiggleREye" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animate id="blinkR" attributename="ry" to="0" attribute="XML" begin="blink()" dur="1s"/>
+                    <animateMotion id="bounceREye" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </ellipse>
+                <ellipse id=rightEyeP cx=275 cy=250 rx=5 ry=5 style="fill:white">
+                    <animateMotion id="STSREyeP" attributename="x" path="M -400 0  H 400 M 400 0 H-400" attributeType="XML" begin="STS()" dur="10s"/><!--side to side -->
+                     <animateTransform id="wiggleREyeP" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bounceREyeP" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </ellipse>
+            </g>
+            <g id=scalpedEdge>
+                <!--in order to have the cute little scalloped edge i have a whole line of circles along the bottom -->
+                <circle cx=7 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=20 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=32 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=45 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=58 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=71 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=84 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=97 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=110 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=123 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=135 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=148 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle cx=161 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c1" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec1" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec1" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=174 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c2" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec2" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec2" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=187 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c3" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec3" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec3" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=200 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c4" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec4" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec4" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=213 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c5" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec5" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec5" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=226 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c6" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec6" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec6" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=239 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c7" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec7" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec7" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=252 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c8" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec8" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec8" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=265 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c9" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec9" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec9" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=278 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c10" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec10" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec10" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=291 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c11" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec11" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec11" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=304 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c12" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec12" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec12" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=317 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c13" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec13" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec13" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle cx=330 cy=400 r=7 style="fill:rgb(140,205,247)">
+                    <animateMotion id="c14" attributename="x" path="M 0 0  H 7 M 7 0 H-7" attributeType="XML" begin="squiggle()" dur="3s"/><!--squiggle -->
+                    <animateTransform id="wigglec14" attributename="transform" type="rotate" from="0 250 250" to="-10 250 250" attribute="XML" begin="wiggle()" dur="1s"/><!--wiggle -->
+                    <animateMotion id="bouncec14" path="m -217 22 c 137 -496 245 0 250 0 c 105 279 179 165 250 0" attribute="XML" begin="bounce()" dur="5s"/><!--bounce-->
+                </circle>
+                <circle id=x1 cx=343 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x2 cx=356 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x3 cx=369 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x4 cx=382 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x5 cx=395 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x6 cx=408 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x7 cx=421 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x8 cx=434 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x9 cx=447 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x10 cx=460 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x11 cx=473 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x12 cx=486 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x13 cx=499 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+                <circle id=x14 cx=512 cy=400 r=7 style="fill:rgb(140,205,247)"></circle>
+            </g>
+        </svg>
+        
+        <div id="buttons">
+            <div id=buttonZone>
+            <h1>Button Zone</h1><!--other buttons-->
+            <button id=animate onclick="show()">Animate!</button>
+            <button id=svg onclick="showSVG()">SVG</button>
+            <button id=download onclick="downloadButton()">Download</button>
+        </div>
+        <div>
+            <h1>Animation</h1><!--animation buttons-->
+            <button id=a1 onclick="colorChange()">Color Change</button>
+            <button id=a2 onclick="wiggle()">Wiggle</button>
+            <button id=a3 onclick="STS()">Side to Side</button>
+            <button id=a4 onclick="squiggle()">Squiggle</button>
+            <button id=a5 onclick="blink()">Blink</button>
+            <button id=a6 onclick="bounce()">Bounce</button>
+        </div>
+        </div>
+        <div id="svgZone" class="box"><!--where the svg code shows-->
+        </div>
+    </div>
+    </body>
+</html>

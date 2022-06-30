@@ -1,0 +1,37 @@
+/*
+   CS230 Lab2
+   Author: Jessica Krapfl
+   Date:   08/02/21
+*/
+
+#ghost
+{
+    float: right;
+}
+
+#svgZone
+{
+    color: black;
+    background-color: aqua;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 300px;
+    overflow: scroll;/*lets you scroll in the box*/
+}
+
+#buttons
+{
+    float: left;
+    width: 300px;
+    height: 100px;
+}
+#container/*keeps things from messing up when the screen gets smaller*/
+{
+    height: 500px;
+    width: 1400px;
+    background-color: darkseagreen;
+    margin: auto;
+    position: relative;
+    align-items: center;
+}
